@@ -1,4 +1,4 @@
-#include "pebble.h"
+﻿#include "pebble.h"
 #include "stddef.h"
 #include "string.h"
   
@@ -221,7 +221,7 @@ uint8_t HardCodeNoVibrations = 100;
 // This is for people who want old ones too
 // Use for a custom load
 uint8_t HardCodeNoAnimations = 100;
-uint8_t HardCodeAllAnimations = 100;
+uint8_t HardCodeAllAnimations = 111;
 
 // Control Vibrations for Config File
 // IF YOU WANT NO VIBRATIONS, SET TO 111 (true)
@@ -1391,6 +1391,7 @@ static void load_bg() {
 	char happymsg_buffer116[26] = "VICTORY LANE! RYAN REED\0";
 	char happymsg_buffer222[26] = "UR BG'S MOVIN NO*LIE*LIE\0";
   char happymsg_buffer321[26] = "BLAST OFF! HOUSTON?\0";
+	char happymsg_buffer160[26] = "TOO SWEET SIXTEEN\0";
   
 	// CODE START
   
@@ -1546,6 +1547,12 @@ static void load_bg() {
 		      //APP_LOG(APP_LOG_LEVEL_INFO, "LOAD BG, ANIMATE HAPPY MSG LAYER");
 		      animate_happymsg(happymsg_buffer83);
         } // animate happy msg layer @ 83
+
+	if ((currentBG_isMMOL == 111) && (current_bg == 160)) {
+		      // ANIMATE HAPPY MSG LAYER     
+		      //APP_LOG(APP_LOG_LEVEL_INFO, "LOAD BG, ANIMATE HAPPY MSG LAYER");
+		      animate_happymsg(happymsg_buffer160);
+        } // animate happy msg layer @ 160
         
         if (HardCodeAllAnimations == 111) {
           // extra animations for those that want them, these are the old ones
